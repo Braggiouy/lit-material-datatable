@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #fafafa;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+
+    <script type="module">
+      import { html, render } from 'lit';
+      import '../dist/src/lit-material-datatable.js';
+
+      const data = [
+        {
+          fruit: 'Apple',
+          weight: '64gr',
+          stock: 'Yes',
+          needed: 'No',
+        },
+        {
+          fruit: 'Orange',
+          weight: '51gr',
+          stock: 'No',
+          needed: 'Yes',
+        },
+        {
+          fruit: 'Banana',
+          weight: '30gr',
+          stock: 'No',
+          needed: 'No',
+        },
+        {
+          fruit: 'Papaya',
+          weight: '230gr',
+          stock: 'No',
+          needed: 'Yes',
+        },
+        {
+          fruit: 'Watermelon',
+          weight: '412gr',
+          stock: 'Yes',
+          needed: 'Yes',
+        },
+        {
+          fruit: 'Cherry',
+          weight: '10gr',
+          stock: 'No',
+          needed: 'Yes',
+        },
+        {
+          fruit: 'Strawberry',
+          weight: '23gr',
+          stock: 'No',
+          needed: 'No',
+        },
+        {
+          fruit: 'Kiwi',
+          weight: '50gr',
+          stock: 'No',
+          needed: 'Yes',
+        },
+      ];
+
+      const headers = [
+        { name: 'Fruit', id: 'fruit' },
+        { name: 'Weight', id: 'weight' },
+        { name: 'Stock', id: 'stock' },
+        { name: 'Needed', id: 'needed' },
+      ];
+
+      render(
+        html`
+          <lit-material-datatable
+            .data=${data}
+            .headers=${headers}
+            entriesPerPage="3"
+            actualPage="1"
+          >
+          </lit-material-datatable>
+        `,
+        document.querySelector('#demo')
+      );
+    </script>
+  </body>
+</html>
